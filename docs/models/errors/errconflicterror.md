@@ -1,0 +1,11 @@
+# ErrConflictError
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `code`                                                              | [errors.ErrConflictCode](../../models/errors/errconflictcode.md)    | :heavy_check_mark:                                                  | A machine readable error code.                                      | CONFLICT                                                            |
+| `docs`                                                              | *string*                                                            | :heavy_check_mark:                                                  | A link to our documentation with more details about this error code | https://unkey.dev/docs/api-reference/errors/code/CONFLICT           |
+| `message`                                                           | *string*                                                            | :heavy_check_mark:                                                  | A human readable explanation of what went wrong                     |                                                                     |
+| `requestId`                                                         | *string*                                                            | :heavy_check_mark:                                                  | Please always include the requestId in your error report            | req_1234                                                            |
