@@ -7,13 +7,10 @@ async function run() {
         bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     });
 
-    const res = await sdk.getV1Liveness();
+    const result = await sdk.getV1Liveness();
 
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
-    }
-
-    // handle response
+    // Handle the result
+    console.log(result);
 }
 
 run();

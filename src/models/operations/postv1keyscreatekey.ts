@@ -43,7 +43,7 @@ export type Ratelimit = {
     /**
      * Fast ratelimiting doesn't add latency, while consistent ratelimiting is more accurate.
      */
-    type: TypeT;
+    type?: TypeT | undefined;
     /**
      * The total amount of burstable requests.
      */
@@ -194,7 +194,7 @@ export const TypeT$ = z.nativeEnum(TypeT);
 /** @internal */
 export namespace Ratelimit$ {
     export type Inbound = {
-        type: TypeT;
+        type?: TypeT | undefined;
         limit: number;
         refillRate: number;
         refillInterval: number;
@@ -202,14 +202,14 @@ export namespace Ratelimit$ {
 
     export const inboundSchema: z.ZodType<Ratelimit, z.ZodTypeDef, Inbound> = z
         .object({
-            type: TypeT$,
+            type: TypeT$.default(TypeT.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),
         })
         .transform((v) => {
             return {
-                type: v.type,
+                ...(v.type === undefined ? null : { type: v.type }),
                 limit: v.limit,
                 refillRate: v.refillRate,
                 refillInterval: v.refillInterval,
@@ -225,7 +225,7 @@ export namespace Ratelimit$ {
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Ratelimit> = z
         .object({
-            type: TypeT$,
+            type: TypeT$.default(TypeT.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),
@@ -261,14 +261,14 @@ export namespace PostV1KeysCreateKeyRequestBody$ {
             apiId: z.string(),
             prefix: z.string().optional(),
             name: z.string().optional(),
-            byteLength: z.number().int().optional(),
+            byteLength: z.number().int().default(16),
             ownerId: z.string().optional(),
             meta: z.record(z.any()).optional(),
             expires: z.number().int().optional(),
             remaining: z.number().int().optional(),
             refill: z.lazy(() => Refill$.inboundSchema).optional(),
             ratelimit: z.lazy(() => Ratelimit$.inboundSchema).optional(),
-            enabled: z.boolean().optional(),
+            enabled: z.boolean().default(true),
         })
         .transform((v) => {
             return {
@@ -290,14 +290,14 @@ export namespace PostV1KeysCreateKeyRequestBody$ {
         apiId: string;
         prefix?: string | undefined;
         name?: string | undefined;
-        byteLength?: number | undefined;
+        byteLength: number;
         ownerId?: string | undefined;
         meta?: Record<string, any> | undefined;
         expires?: number | undefined;
         remaining?: number | undefined;
         refill?: Refill$.Outbound | undefined;
         ratelimit?: Ratelimit$.Outbound | undefined;
-        enabled?: boolean | undefined;
+        enabled: boolean;
     };
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostV1KeysCreateKeyRequestBody> =
@@ -306,28 +306,28 @@ export namespace PostV1KeysCreateKeyRequestBody$ {
                 apiId: z.string(),
                 prefix: z.string().optional(),
                 name: z.string().optional(),
-                byteLength: z.number().int().optional(),
+                byteLength: z.number().int().default(16),
                 ownerId: z.string().optional(),
                 meta: z.record(z.any()).optional(),
                 expires: z.number().int().optional(),
                 remaining: z.number().int().optional(),
                 refill: z.lazy(() => Refill$.outboundSchema).optional(),
                 ratelimit: z.lazy(() => Ratelimit$.outboundSchema).optional(),
-                enabled: z.boolean().optional(),
+                enabled: z.boolean().default(true),
             })
             .transform((v) => {
                 return {
                     apiId: v.apiId,
                     ...(v.prefix === undefined ? null : { prefix: v.prefix }),
                     ...(v.name === undefined ? null : { name: v.name }),
-                    ...(v.byteLength === undefined ? null : { byteLength: v.byteLength }),
+                    byteLength: v.byteLength,
                     ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
                     ...(v.meta === undefined ? null : { meta: v.meta }),
                     ...(v.expires === undefined ? null : { expires: v.expires }),
                     ...(v.remaining === undefined ? null : { remaining: v.remaining }),
                     ...(v.refill === undefined ? null : { refill: v.refill }),
                     ...(v.ratelimit === undefined ? null : { ratelimit: v.ratelimit }),
-                    ...(v.enabled === undefined ? null : { enabled: v.enabled }),
+                    enabled: v.enabled,
                 };
             });
 }

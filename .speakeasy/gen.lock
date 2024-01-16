@@ -4,15 +4,16 @@ management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.231.0
-  releaseVersion: 0.0.1
-  configChecksum: 24248c6522d1eaad2a69d9fc3401a944
+  generationVersion: 2.233.2
+  releaseVersion: 0.1.0
+  configChecksum: 3dc062b01f85ae3cf752a2f21d096a3b
   repoURL: https://github.com/unkeyed/speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/unkeyed/speakeasy
 features:
   typescript:
-    core: 3.4.5
+    constsAndDefaults: 0.1.1
+    core: 3.4.6
     flattening: 2.81.1
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
@@ -20,6 +21,7 @@ generatedFiles:
   - src/sdk/sdk.ts
   - .eslintrc.js
   - .npmignore
+  - RUNTIMES.md
   - package-lock.json
   - package.json
   - src/index.ts

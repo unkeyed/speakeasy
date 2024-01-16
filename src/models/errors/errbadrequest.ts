@@ -46,8 +46,8 @@ export class ErrBadRequest extends Error {
     /** The original data that was passed to this error instance. */
     data$: ErrBadRequestData;
 
-    constructor(err: ErrBadRequestData, options?: ErrorOptions) {
-        super("", options);
+    constructor(err: ErrBadRequestData) {
+        super("");
         this.data$ = err;
 
         this.error = err.error;

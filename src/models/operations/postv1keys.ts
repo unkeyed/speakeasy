@@ -21,7 +21,7 @@ export type PostV1KeysRatelimit = {
     /**
      * Fast ratelimiting doesn't add latency, while consistent ratelimiting is more accurate.
      */
-    type: PostV1KeysType;
+    type?: PostV1KeysType | undefined;
     /**
      * The total amount of burstable requests.
      */
@@ -128,7 +128,7 @@ export const PostV1KeysType$ = z.nativeEnum(PostV1KeysType);
 /** @internal */
 export namespace PostV1KeysRatelimit$ {
     export type Inbound = {
-        type: PostV1KeysType;
+        type?: PostV1KeysType | undefined;
         limit: number;
         refillRate: number;
         refillInterval: number;
@@ -136,14 +136,14 @@ export namespace PostV1KeysRatelimit$ {
 
     export const inboundSchema: z.ZodType<PostV1KeysRatelimit, z.ZodTypeDef, Inbound> = z
         .object({
-            type: PostV1KeysType$,
+            type: PostV1KeysType$.default(PostV1KeysType.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),
         })
         .transform((v) => {
             return {
-                type: v.type,
+                ...(v.type === undefined ? null : { type: v.type }),
                 limit: v.limit,
                 refillRate: v.refillRate,
                 refillInterval: v.refillInterval,
@@ -159,7 +159,7 @@ export namespace PostV1KeysRatelimit$ {
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, PostV1KeysRatelimit> = z
         .object({
-            type: PostV1KeysType$,
+            type: PostV1KeysType$.default(PostV1KeysType.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),
@@ -193,7 +193,7 @@ export namespace PostV1KeysRequestBody$ {
             apiId: z.string(),
             prefix: z.string().optional(),
             name: z.string().optional(),
-            byteLength: z.number().int().optional(),
+            byteLength: z.number().int().default(16),
             ownerId: z.string().optional(),
             meta: z.record(z.any()).optional(),
             expires: z.number().int().optional(),
@@ -218,7 +218,7 @@ export namespace PostV1KeysRequestBody$ {
         apiId: string;
         prefix?: string | undefined;
         name?: string | undefined;
-        byteLength?: number | undefined;
+        byteLength: number;
         ownerId?: string | undefined;
         meta?: Record<string, any> | undefined;
         expires?: number | undefined;
@@ -231,7 +231,7 @@ export namespace PostV1KeysRequestBody$ {
             apiId: z.string(),
             prefix: z.string().optional(),
             name: z.string().optional(),
-            byteLength: z.number().int().optional(),
+            byteLength: z.number().int().default(16),
             ownerId: z.string().optional(),
             meta: z.record(z.any()).optional(),
             expires: z.number().int().optional(),
@@ -243,7 +243,7 @@ export namespace PostV1KeysRequestBody$ {
                 apiId: v.apiId,
                 ...(v.prefix === undefined ? null : { prefix: v.prefix }),
                 ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.byteLength === undefined ? null : { byteLength: v.byteLength }),
+                byteLength: v.byteLength,
                 ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
                 ...(v.meta === undefined ? null : { meta: v.meta }),
                 ...(v.expires === undefined ? null : { expires: v.expires }),

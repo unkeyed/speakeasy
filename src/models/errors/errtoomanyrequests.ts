@@ -46,8 +46,8 @@ export class ErrTooManyRequests extends Error {
     /** The original data that was passed to this error instance. */
     data$: ErrTooManyRequestsData;
 
-    constructor(err: ErrTooManyRequestsData, options?: ErrorOptions) {
-        super("", options);
+    constructor(err: ErrTooManyRequestsData) {
+        super("");
         this.data$ = err;
 
         this.error = err.error;

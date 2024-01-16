@@ -46,8 +46,8 @@ export class ErrUnauthorized extends Error {
     /** The original data that was passed to this error instance. */
     data$: ErrUnauthorizedData;
 
-    constructor(err: ErrUnauthorizedData, options?: ErrorOptions) {
-        super("", options);
+    constructor(err: ErrUnauthorizedData) {
+        super("");
         this.data$ = err;
 
         this.error = err.error;

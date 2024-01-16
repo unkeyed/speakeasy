@@ -46,8 +46,8 @@ export class ErrInternalServerError extends Error {
     /** The original data that was passed to this error instance. */
     data$: ErrInternalServerErrorData;
 
-    constructor(err: ErrInternalServerErrorData, options?: ErrorOptions) {
-        super("", options);
+    constructor(err: ErrInternalServerErrorData) {
+        super("");
         this.data$ = err;
 
         this.error = err.error;

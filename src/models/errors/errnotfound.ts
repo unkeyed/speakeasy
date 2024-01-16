@@ -46,8 +46,8 @@ export class ErrNotFound extends Error {
     /** The original data that was passed to this error instance. */
     data$: ErrNotFoundData;
 
-    constructor(err: ErrNotFoundData, options?: ErrorOptions) {
-        super("", options);
+    constructor(err: ErrNotFoundData) {
+        super("");
         this.data$ = err;
 
         this.error = err.error;

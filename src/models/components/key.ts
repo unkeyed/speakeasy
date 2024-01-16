@@ -47,7 +47,7 @@ export type Ratelimit = {
     /**
      * Fast ratelimiting doesn't add latency, while consistent ratelimiting is more accurate.
      */
-    type: TypeT;
+    type?: TypeT | undefined;
     /**
      * The total amount of burstable requests.
      */
@@ -173,7 +173,7 @@ export const TypeT$ = z.nativeEnum(TypeT);
 /** @internal */
 export namespace Ratelimit$ {
     export type Inbound = {
-        type: TypeT;
+        type?: TypeT | undefined;
         limit: number;
         refillRate: number;
         refillInterval: number;
@@ -181,14 +181,14 @@ export namespace Ratelimit$ {
 
     export const inboundSchema: z.ZodType<Ratelimit, z.ZodTypeDef, Inbound> = z
         .object({
-            type: TypeT$,
+            type: TypeT$.default(TypeT.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),
         })
         .transform((v) => {
             return {
-                type: v.type,
+                ...(v.type === undefined ? null : { type: v.type }),
                 limit: v.limit,
                 refillRate: v.refillRate,
                 refillInterval: v.refillInterval,
@@ -204,7 +204,7 @@ export namespace Ratelimit$ {
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Ratelimit> = z
         .object({
-            type: TypeT$,
+            type: TypeT$.default(TypeT.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),

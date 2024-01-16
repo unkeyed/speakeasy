@@ -1,7 +1,7 @@
 {
   "type": "commonjs",
   "name": "openapi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Speakeasy",
   "main": "./index.js",
   "sideEffects": false,

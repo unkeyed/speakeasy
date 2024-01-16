@@ -40,13 +40,10 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.getV1Liveness();
+  const result = await sdk.getV1Liveness();
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -90,13 +87,10 @@ async function run() {
 
   const keyId = "key_1234";
   
-  const res = await sdk.getV1KeysGetKey(keyId);
+  const result = await sdk.getV1KeysGetKey(keyId);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -139,15 +133,12 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1KeysDeleteKey({
+  const result = await sdk.postV1KeysDeleteKey({
     keyId: "key_1234",
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -191,7 +182,7 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1KeysCreateKey({
+  const result = await sdk.postV1KeysCreateKey({
     apiId: "api_123",
     name: "my key",
     ownerId: "team_123",
@@ -206,19 +197,15 @@ async function run() {
       amount: 503140,
     },
     ratelimit: {
-      type: TypeT.Fast,
-      limit: 728674,
-      refillRate: 204573,
-      refillInterval: 983586,
+      limit: 282003,
+      refillRate: 728674,
+      refillInterval: 204573,
     },
     enabled: false,
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -261,16 +248,13 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1KeysVerifyKey({
+  const result = await sdk.postV1KeysVerifyKey({
     apiId: "api_1234",
     key: "sk_1234",
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -314,7 +298,7 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1KeysUpdateKey({
+  const result = await sdk.postV1KeysUpdateKey({
     keyId: "key_123",
     name: "Customer X",
     ownerId: "user_123",
@@ -337,11 +321,8 @@ async function run() {
     enabled: true,
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -385,17 +366,14 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1KeysUpdateRemaining({
+  const result = await sdk.postV1KeysUpdateRemaining({
     keyId: "key_123",
     op: Op.Decrement,
     value: 1,
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -439,7 +417,7 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.getV1KeysGetVerifications({
+  const result = await sdk.getV1KeysGetVerifications({
     keyId: "key_1234",
     ownerId: "chronark",
     start: 1620000000000,
@@ -447,11 +425,8 @@ async function run() {
     granularity: Granularity.Day,
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -495,7 +470,7 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.getVxKeysGetVerifications({
+  const result = await sdk.getVxKeysGetVerifications({
     keyId: "key_1234",
     ownerId: "chronark",
     start: 1620000000000,
@@ -503,11 +478,8 @@ async function run() {
     granularity: QueryParamGranularity.Day,
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -552,13 +524,10 @@ async function run() {
 
   const apiId = "api_1234";
   
-  const res = await sdk.getV1ApisGetApi(apiId);
+  const result = await sdk.getV1ApisGetApi(apiId);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -601,15 +570,12 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1ApisCreateApi({
+  const result = await sdk.postV1ApisCreateApi({
     name: "my-api",
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -657,13 +623,10 @@ async function run() {
   const cursor = "string";
   const ownerId = "string";
   
-  const res = await sdk.getV1ApisListKeys(apiId, limit, cursor, ownerId);
+  const result = await sdk.getV1ApisListKeys(apiId, limit, cursor, ownerId);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -709,15 +672,12 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1ApisDeleteApi({
+  const result = await sdk.postV1ApisDeleteApi({
     apiId: "api_1234",
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -779,13 +739,10 @@ async function run() {
     remaining: 1000,
   };
   
-  const res = await sdk.putV1KeysKeyId(keyId, requestBody);
+  const result = await sdk.putV1KeysKeyId(keyId, requestBody);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -829,13 +786,10 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.getV1KeysKeyId();
+  const result = await sdk.getV1KeysKeyId();
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -877,13 +831,10 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.deleteV1KeysKeyId();
+  const result = await sdk.deleteV1KeysKeyId();
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -937,20 +888,16 @@ async function run() {
     expires: 1623869797161,
     remaining: 1000,
     ratelimit: {
-      type: PostV1KeysType.Fast,
-      limit: 296588,
-      refillRate: 49354,
-      refillInterval: 360121,
+      limit: 270910,
+      refillRate: 296588,
+      refillInterval: 49354,
     },
   };
   
-  const res = await sdk.postV1Keys(requestBody);
+  const result = await sdk.postV1Keys(requestBody);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -993,16 +940,13 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1KeysVerify({
+  const result = await sdk.postV1KeysVerify({
     apiId: "api_1234",
     key: "sk_1234",
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -1045,15 +989,12 @@ async function run() {
     bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
-  const res = await sdk.postV1Apis({
+  const result = await sdk.postV1Apis({
     name: "my-api",
   });
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -1098,13 +1039,10 @@ async function run() {
 
   const apiId = "api_1234";
   
-  const res = await sdk.getV1ApisApiId(apiId);
+  const result = await sdk.getV1ApisApiId(apiId);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -1149,13 +1087,10 @@ async function run() {
 
   const apiId = "api_1234";
   
-  const res = await sdk.deleteV1ApisApiId(apiId);
+  const result = await sdk.deleteV1ApisApiId(apiId);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -1203,13 +1138,10 @@ async function run() {
   const offset = 2757.36;
   const ownerId = "string";
   
-  const res = await sdk.getV1ApisApiIdKeys(apiId, limit, offset, ownerId);
+  const result = await sdk.getV1ApisApiIdKeys(apiId, limit, offset, ownerId);
 
-  if (res?.statusCode !== 200) {
-    throw new Error("Unexpected status code: " + res?.statusCode || "-");
-  }
-  
-  // handle response
+  // Handle the result
+  console.log(result)
 }
 
 run();

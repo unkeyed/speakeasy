@@ -8,7 +8,7 @@ generation:
   fixes:
     nameResolutionDec2023: true
 typescript:
-  version: 0.0.1
+  version: 0.1.0
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true

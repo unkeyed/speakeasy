@@ -54,7 +54,7 @@ export namespace GetV1ApisApiIdKeysRequest$ {
     export const inboundSchema: z.ZodType<GetV1ApisApiIdKeysRequest, z.ZodTypeDef, Inbound> = z
         .object({
             apiId: z.string(),
-            limit: z.number().int().optional(),
+            limit: z.number().int().default(100),
             offset: z.nullable(z.number()).optional(),
             ownerId: z.string().optional(),
         })
@@ -69,7 +69,7 @@ export namespace GetV1ApisApiIdKeysRequest$ {
 
     export type Outbound = {
         apiId: string;
-        limit?: number | undefined;
+        limit: number;
         offset?: number | null | undefined;
         ownerId?: string | undefined;
     };
@@ -77,14 +77,14 @@ export namespace GetV1ApisApiIdKeysRequest$ {
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetV1ApisApiIdKeysRequest> = z
         .object({
             apiId: z.string(),
-            limit: z.number().int().optional(),
+            limit: z.number().int().default(100),
             offset: z.nullable(z.number()).optional(),
             ownerId: z.string().optional(),
         })
         .transform((v) => {
             return {
                 apiId: v.apiId,
-                ...(v.limit === undefined ? null : { limit: v.limit }),
+                limit: v.limit,
                 ...(v.offset === undefined ? null : { offset: v.offset }),
                 ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
             };

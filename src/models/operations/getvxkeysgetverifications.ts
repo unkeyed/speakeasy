@@ -87,7 +87,7 @@ export namespace GetVxKeysGetVerificationsRequest$ {
                 ownerId: z.string().optional(),
                 start: z.nullable(z.number().int()).optional(),
                 end: z.nullable(z.number().int()).optional(),
-                granularity: QueryParamGranularity$.optional(),
+                granularity: QueryParamGranularity$.default(QueryParamGranularity.Day),
             })
             .transform((v) => {
                 return {
@@ -104,7 +104,7 @@ export namespace GetVxKeysGetVerificationsRequest$ {
         ownerId?: string | undefined;
         start?: number | null | undefined;
         end?: number | null | undefined;
-        granularity?: QueryParamGranularity | undefined;
+        granularity: QueryParamGranularity;
     };
 
     export const outboundSchema: z.ZodType<
@@ -117,7 +117,7 @@ export namespace GetVxKeysGetVerificationsRequest$ {
             ownerId: z.string().optional(),
             start: z.nullable(z.number().int()).optional(),
             end: z.nullable(z.number().int()).optional(),
-            granularity: QueryParamGranularity$.optional(),
+            granularity: QueryParamGranularity$.default(QueryParamGranularity.Day),
         })
         .transform((v) => {
             return {
@@ -125,7 +125,7 @@ export namespace GetVxKeysGetVerificationsRequest$ {
                 ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
                 ...(v.start === undefined ? null : { start: v.start }),
                 ...(v.end === undefined ? null : { end: v.end }),
-                ...(v.granularity === undefined ? null : { granularity: v.granularity }),
+                granularity: v.granularity,
             };
         });
 }
