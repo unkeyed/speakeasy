@@ -4,7 +4,7 @@ management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
+  generationVersion: 2.234.3
   releaseVersion: 0.1.0
   configChecksum: 3dc062b01f85ae3cf752a2f21d096a3b
   repoURL: https://github.com/unkeyed/speakeasy.git
@@ -28,6 +28,7 @@ generatedFiles:
   - src/lib/base64.ts
   - src/lib/config.ts
   - src/lib/encodings.ts
+  - src/lib/event-streams.ts
   - src/lib/http.ts
   - src/lib/retries.ts
   - src/lib/sdks.ts
