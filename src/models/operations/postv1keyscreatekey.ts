@@ -31,7 +31,7 @@ export type Refill = {
  *
  * @see {@link https://unkey.dev/docs/features/ratelimiting} - Learn more
  */
-export enum TypeT {
+export enum Type {
     Fast = "fast",
     Consistent = "consistent",
 }
@@ -43,7 +43,7 @@ export type Ratelimit = {
     /**
      * Fast ratelimiting doesn't add latency, while consistent ratelimiting is more accurate.
      */
-    type?: TypeT | undefined;
+    type?: Type | undefined;
     /**
      * The total amount of burstable requests.
      */
@@ -189,12 +189,12 @@ export namespace Refill$ {
 }
 
 /** @internal */
-export const TypeT$ = z.nativeEnum(TypeT);
+export const Type$ = z.nativeEnum(Type);
 
 /** @internal */
 export namespace Ratelimit$ {
     export type Inbound = {
-        type?: TypeT | undefined;
+        type?: Type | undefined;
         limit: number;
         refillRate: number;
         refillInterval: number;
@@ -202,7 +202,7 @@ export namespace Ratelimit$ {
 
     export const inboundSchema: z.ZodType<Ratelimit, z.ZodTypeDef, Inbound> = z
         .object({
-            type: TypeT$.default(TypeT.Fast),
+            type: Type$.default(Type.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),
@@ -217,7 +217,7 @@ export namespace Ratelimit$ {
         });
 
     export type Outbound = {
-        type: TypeT;
+        type: Type;
         limit: number;
         refillRate: number;
         refillInterval: number;
@@ -225,7 +225,7 @@ export namespace Ratelimit$ {
 
     export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, Ratelimit> = z
         .object({
-            type: TypeT$.default(TypeT.Fast),
+            type: Type$.default(Type.Fast),
             limit: z.number().int(),
             refillRate: z.number().int(),
             refillInterval: z.number().int(),

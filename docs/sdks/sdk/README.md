@@ -175,7 +175,7 @@ run();
 
 ```typescript
 import { SDK } from "openapi";
-import { Interval, TypeT } from "openapi/models/operations";
+import { Interval, Type } from "openapi/models/operations";
 
 async function run() {
   const sdk = new SDK({

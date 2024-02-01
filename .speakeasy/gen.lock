@@ -4,16 +4,16 @@ management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 0.1.0
-  configChecksum: 3dc062b01f85ae3cf752a2f21d096a3b
+  generationVersion: 2.245.1
+  releaseVersion: 0.1.1
+  configChecksum: 938a84ec2866c02fa465e4e761d31341
   repoURL: https://github.com/unkeyed/speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/unkeyed/speakeasy
 features:
   typescript:
     constsAndDefaults: 0.1.1
-    core: 3.4.6
+    core: 3.4.8
     flattening: 2.81.1
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
@@ -86,7 +86,7 @@ generatedFiles:
   - docs/models/operations/postv1keysdeletekeyresponse.md
   - docs/models/operations/interval.md
   - docs/models/operations/refill.md
-  - docs/models/operations/typet.md
+  - docs/models/operations/type.md
   - docs/models/operations/ratelimit.md
   - docs/models/operations/postv1keyscreatekeyrequestbody.md
   - docs/models/operations/postv1keyscreatekeyresponsebody.md
@@ -186,7 +186,7 @@ generatedFiles:
   - docs/models/errors/errinternalservererror.md
   - docs/models/components/interval.md
   - docs/models/components/refill.md
-  - docs/models/components/typet.md
+  - docs/models/components/type.md
   - docs/models/components/ratelimit.md
   - docs/models/components/key.md
   - docs/models/components/security.md
