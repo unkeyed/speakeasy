@@ -7,8 +7,10 @@ generation:
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: true
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 0.1.1
+  version: 0.1.2
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
