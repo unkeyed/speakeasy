@@ -65,7 +65,7 @@ export namespace GetV1ApisListKeysRequest$ {
         .transform((v) => {
             return {
                 apiId: v.apiId,
-                ...(v.limit === undefined ? null : { limit: v.limit }),
+                limit: v.limit,
                 ...(v.cursor === undefined ? null : { cursor: v.cursor }),
                 ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
             };

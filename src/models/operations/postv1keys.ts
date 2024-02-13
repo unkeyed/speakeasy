@@ -143,7 +143,7 @@ export namespace PostV1KeysRatelimit$ {
         })
         .transform((v) => {
             return {
-                ...(v.type === undefined ? null : { type: v.type }),
+                type: v.type,
                 limit: v.limit,
                 refillRate: v.refillRate,
                 refillInterval: v.refillInterval,
@@ -205,7 +205,7 @@ export namespace PostV1KeysRequestBody$ {
                 apiId: v.apiId,
                 ...(v.prefix === undefined ? null : { prefix: v.prefix }),
                 ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.byteLength === undefined ? null : { byteLength: v.byteLength }),
+                byteLength: v.byteLength,
                 ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
                 ...(v.meta === undefined ? null : { meta: v.meta }),
                 ...(v.expires === undefined ? null : { expires: v.expires }),

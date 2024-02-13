@@ -209,7 +209,7 @@ export namespace Ratelimit$ {
         })
         .transform((v) => {
             return {
-                ...(v.type === undefined ? null : { type: v.type }),
+                type: v.type,
                 limit: v.limit,
                 refillRate: v.refillRate,
                 refillInterval: v.refillInterval,
@@ -275,14 +275,14 @@ export namespace PostV1KeysCreateKeyRequestBody$ {
                 apiId: v.apiId,
                 ...(v.prefix === undefined ? null : { prefix: v.prefix }),
                 ...(v.name === undefined ? null : { name: v.name }),
-                ...(v.byteLength === undefined ? null : { byteLength: v.byteLength }),
+                byteLength: v.byteLength,
                 ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
                 ...(v.meta === undefined ? null : { meta: v.meta }),
                 ...(v.expires === undefined ? null : { expires: v.expires }),
                 ...(v.remaining === undefined ? null : { remaining: v.remaining }),
                 ...(v.refill === undefined ? null : { refill: v.refill }),
                 ...(v.ratelimit === undefined ? null : { ratelimit: v.ratelimit }),
-                ...(v.enabled === undefined ? null : { enabled: v.enabled }),
+                enabled: v.enabled,
             };
         });
 

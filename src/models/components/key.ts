@@ -188,7 +188,7 @@ export namespace Ratelimit$ {
         })
         .transform((v) => {
             return {
-                ...(v.type === undefined ? null : { type: v.type }),
+                type: v.type,
                 limit: v.limit,
                 refillRate: v.refillRate,
                 refillInterval: v.refillInterval,

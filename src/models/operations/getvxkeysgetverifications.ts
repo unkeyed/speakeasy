@@ -95,7 +95,7 @@ export namespace GetVxKeysGetVerificationsRequest$ {
                     ...(v.ownerId === undefined ? null : { ownerId: v.ownerId }),
                     ...(v.start === undefined ? null : { start: v.start }),
                     ...(v.end === undefined ? null : { end: v.end }),
-                    ...(v.granularity === undefined ? null : { granularity: v.granularity }),
+                    granularity: v.granularity,
                 };
             });
 

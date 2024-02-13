@@ -187,19 +187,20 @@ async function run() {
     name: "my key",
     ownerId: "team_123",
     meta: {
-      "billingTier": "string",
-      "trialEnds": "string",
+      "billingTier": "PRO",
+      "trialEnds": "2023-06-16T17:16:37.161Z",
     },
     expires: 1623869797161,
     remaining: 1000,
     refill: {
-      interval: Interval.Monthly,
-      amount: 503140,
+      interval: Interval.Daily,
+      amount: 100,
     },
     ratelimit: {
-      limit: 282003,
-      refillRate: 728674,
-      refillInterval: 204573,
+      type: Type.Fast,
+      limit: 10,
+      refillRate: 1,
+      refillInterval: 60,
     },
     enabled: false,
   });
@@ -304,19 +305,19 @@ async function run() {
     ownerId: "user_123",
     meta: {
       "roles": "string",
-      "stripeCustomerId": "string",
+      "stripeCustomerId": "cus_1234",
     },
     expires: 0,
     ratelimit: {
-      type: PostV1KeysUpdateKeyType.Consistent,
-      limit: 658469,
-      refillRate: 252384,
-      refillInterval: 140067,
+      type: PostV1KeysUpdateKeyType.Fast,
+      limit: 10,
+      refillRate: 1,
+      refillInterval: 60,
     },
     remaining: 1000,
     refill: {
-      interval: PostV1KeysUpdateKeyInterval.Monthly,
-      amount: 524403,
+      interval: PostV1KeysUpdateKeyInterval.Daily,
+      amount: 100,
     },
     enabled: true,
   });
@@ -727,14 +728,14 @@ async function run() {
     ownerId: "user_123",
     meta: {
       "roles": "string",
-      "stripeCustomerId": "string",
+      "stripeCustomerId": "cus_1234",
     },
     expires: 0,
     ratelimit: {
       type: PutV1KeysKeyIdType.Fast,
-      limit: 235123,
-      refillRate: 341056,
-      refillInterval: 799212,
+      limit: 10,
+      refillRate: 1,
+      refillInterval: 60,
     },
     remaining: 1000,
   };
@@ -882,15 +883,16 @@ async function run() {
     name: "my key",
     ownerId: "team_123",
     meta: {
-      "billingTier": "string",
-      "trialEnds": "string",
+      "billingTier": "PRO",
+      "trialEnds": "2023-06-16T17:16:37.161Z",
     },
     expires: 1623869797161,
     remaining: 1000,
     ratelimit: {
-      limit: 270910,
-      refillRate: 296588,
-      refillInterval: 49354,
+      type: PostV1KeysType.Fast,
+      limit: 10,
+      refillRate: 1,
+      refillInterval: 60,
     },
   };
   
