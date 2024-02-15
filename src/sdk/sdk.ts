@@ -21,6 +21,7 @@ export class SDK extends ClientSDK {
         this.options$ = options;
         void this.options$;
     }
+
     async getV1Liveness(options?: RequestOptions): Promise<operations.GetV1LivenessResponse> {
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);

@@ -304,7 +304,7 @@ async function run() {
     name: "Customer X",
     ownerId: "user_123",
     meta: {
-      "roles": "string",
+      "roles": "<value>",
       "stripeCustomerId": "cus_1234",
     },
     expires: 0,
@@ -621,8 +621,8 @@ async function run() {
 
   const apiId = "api_1234";
   const limit = 100;
-  const cursor = "string";
-  const ownerId = "string";
+  const cursor = "<value>";
+  const ownerId = "<value>";
   
   const result = await sdk.getV1ApisListKeys(apiId, limit, cursor, ownerId);
 
@@ -727,7 +727,7 @@ async function run() {
     name: "Customer X",
     ownerId: "user_123",
     meta: {
-      "roles": "string",
+      "roles": "<value>",
       "stripeCustomerId": "cus_1234",
     },
     expires: 0,
@@ -1138,7 +1138,7 @@ async function run() {
   const apiId = "api_1234";
   const limit = 100;
   const offset = 2757.36;
-  const ownerId = "string";
+  const ownerId = "<value>";
   
   const result = await sdk.getV1ApisApiIdKeys(apiId, limit, offset, ownerId);
 

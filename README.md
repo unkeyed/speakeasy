@@ -105,7 +105,6 @@ Example
 
 ```typescript
 import { SDK } from "openapi";
-import * as errors from "openapi/models/errors";
 
 async function run() {
     const sdk = new SDK({
