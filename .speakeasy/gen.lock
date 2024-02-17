@@ -4,7 +4,7 @@ management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
+  generationVersion: 2.262.2
   releaseVersion: 0.1.4
   configChecksum: 0a09ed2158bb08e3a5d6b66ceeff3034
   repoURL: https://github.com/unkeyed/speakeasy.git

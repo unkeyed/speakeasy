@@ -1444,7 +1444,6 @@ export class SDK extends ClientSDK {
                 charEncoding: "percent",
             }),
         };
-
         const path$ = this.templateURLComponent("/v1/keys/{keyId}")(pathParams$);
 
         let security$;
@@ -2051,7 +2050,6 @@ export class SDK extends ClientSDK {
                 charEncoding: "percent",
             }),
         };
-
         const path$ = this.templateURLComponent("/v1/apis/{apiId}")(pathParams$);
 
         let security$;
@@ -2163,7 +2161,6 @@ export class SDK extends ClientSDK {
                 charEncoding: "percent",
             }),
         };
-
         const path$ = this.templateURLComponent("/v1/apis/{apiId}")(pathParams$);
 
         let security$;
@@ -2281,7 +2278,6 @@ export class SDK extends ClientSDK {
                 charEncoding: "percent",
             }),
         };
-
         const path$ = this.templateURLComponent("/v1/apis/{apiId}/keys")(pathParams$);
 
         const query$ = [
