@@ -10,7 +10,11 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 0.1.4
+  version: 0.2.0
+  additionalDependencies:
+    dependencies: {}
+    devDependencies: {}
+    peerDependencies: {}
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
