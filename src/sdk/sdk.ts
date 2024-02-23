@@ -1583,7 +1583,6 @@ export class SDK extends ClientSDK {
         headers$.set("Accept", "application/json");
 
         const payload$ = operations.PutV1KeysKeyIdRequest$.outboundSchema.parse(input$);
-
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
 
         const pathParams$ = {
@@ -1921,7 +1920,6 @@ export class SDK extends ClientSDK {
         headers$.set("Accept", "application/json");
 
         const payload$ = operations.PostV1KeysRequest$.outboundSchema.parse(input$);
-
         const body$ = enc$.encodeJSON("body", payload$.RequestBody, { explode: true });
 
         const path$ = this.templateURLComponent("/v1/keys")();

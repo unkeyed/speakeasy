@@ -4,9 +4,9 @@ management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.263.3
-  releaseVersion: 0.2.0
-  configChecksum: ddd884582ea653a0751f01da82cd9743
+  generationVersion: 2.269.0
+  releaseVersion: 0.3.0
+  configChecksum: a6ab39701eece3ec42220aa0e85c6036
   repoURL: https://github.com/unkeyed/speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/unkeyed/speakeasy
@@ -17,6 +17,7 @@ features:
     flattening: 2.81.1
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.3
+    responseFormat: 0.1.0
 generatedFiles:
   - src/sdk/sdk.ts
   - .eslintrc.js
