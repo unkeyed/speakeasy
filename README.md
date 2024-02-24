@@ -101,10 +101,12 @@ All SDK methods return a response object or throw an error. If Error objects are
 | errors.ErrInternalServerError | 500                           | application/json              |
 | errors.SDKError               | 4xx-5xx                       | */*                           |
 
-Example
+Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted string since validation errors can list many issues and the plain error string may be difficult read when debugging. 
+
 
 ```typescript
 import { SDK } from "openapi";
+import * as errors from "openapi/models/errors";
 
 async function run() {
     const sdk = new SDK({
@@ -116,6 +118,13 @@ async function run() {
         result = await sdk.getV1Liveness();
     } catch (err) {
         switch (true) {
+            case err instanceof errors.SDKValidationError: {
+                // Validation errors can be pretty-printed
+                console.error(err.pretty());
+                // Raw value may also be inspected
+                console.error(err.rawValue);
+                return;
+            }
             case err instanceof errors.ErrBadRequest: {
                 console.error(err); // handle exception
                 return;

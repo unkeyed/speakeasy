@@ -10,3 +10,4 @@ export * from "./errnotfound";
 export * from "./errtoomanyrequests";
 export * from "./errunauthorized";
 export * from "./sdkerror";
+export * from "./sdkvalidationerror";
