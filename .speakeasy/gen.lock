@@ -4,18 +4,18 @@ management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 0.4.0
-  configChecksum: afea9277ce28b487c421d53ae95fe964
+  generationVersion: 2.277.0
+  releaseVersion: 0.4.1
+  configChecksum: 3a2f0eacd6d339c3bd9f97d1b0bffa24
   repoURL: https://github.com/unkeyed/speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/unkeyed/speakeasy
 features:
   typescript:
-    constsAndDefaults: 0.1.3
+    constsAndDefaults: 0.1.5
     core: 3.6.1
     flattening: 2.81.1
-    globalSecurity: 2.82.3
+    globalSecurity: 2.82.4
     globalServerURLs: 2.82.3
     responseFormat: 0.1.0
 generatedFiles:

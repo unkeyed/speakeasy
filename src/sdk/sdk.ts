@@ -55,9 +55,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/liveness",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/liveness" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -225,9 +229,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/keys.getKey",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/keys.getKey" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -390,9 +398,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys.deleteKey",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys.deleteKey" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -555,9 +567,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys.createKey",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys.createKey" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -720,9 +736,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys.verifyKey",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys.verifyKey" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -885,9 +905,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys.updateKey",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys.updateKey" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -1051,9 +1075,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys.updateRemaining",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys.updateRemaining" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -1229,9 +1257,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/keys.getVerifications",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/keys.getVerifications" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -1407,9 +1439,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/vx/keys.getVerifications",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/vx/keys.getVerifications" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -1578,9 +1614,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/apis.getApi",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/apis.getApi" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -1743,9 +1783,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/apis.createApi",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/apis.createApi" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -1926,9 +1970,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/apis.listKeys",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/apis.listKeys" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -2091,9 +2139,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/apis.deleteApi",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/apis.deleteApi" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -2267,9 +2319,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "put_/v1/keys/{keyId}",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "put_/v1/keys/{keyId}" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -2421,9 +2477,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/keys/:keyId",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/keys/:keyId" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -2576,9 +2636,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "delete_/v1/keys/:keyId",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "delete_/v1/keys/:keyId" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -2743,9 +2807,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -2908,9 +2976,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/keys/verify",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/keys/verify" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -3073,9 +3145,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "post_/v1/apis",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "post_/v1/apis" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -3246,9 +3322,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/apis/{apiId}",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/apis/{apiId}" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -3419,9 +3499,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "delete_/v1/apis/{apiId}",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "delete_/v1/apis/{apiId}" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
@@ -3607,9 +3691,13 @@ export class SDK extends ClientSDK {
         } else {
             security$ = {};
         }
+        const context = {
+            operationID: "get_/v1/apis/{apiId}/keys",
+            oAuth2Scopes: [],
+            securitySource: this.options$.bearerAuth,
+        };
         const securitySettings$ = this.resolveGlobalSecurity(security$);
 
-        const context = { operationID: "get_/v1/apis/{apiId}/keys" };
         const doOptions = {
             context,
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
