@@ -3,10 +3,10 @@ id: 7af97eab-55c6-4515-9255-5a395d0e363d
 management:
   docChecksum: 354db46ad7c46031799521bd155482f1
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.277.0
-  releaseVersion: 0.4.1
-  configChecksum: 3a2f0eacd6d339c3bd9f97d1b0bffa24
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.5.0
+  configChecksum: c6ab6d712c441d754a96d3f998b8a899
   repoURL: https://github.com/unkeyed/speakeasy.git
   repoSubDirectory: .
   installationURL: https://github.com/unkeyed/speakeasy
@@ -16,8 +16,8 @@ features:
     core: 3.6.1
     flattening: 2.81.1
     globalSecurity: 2.82.4
-    globalServerURLs: 2.82.3
-    responseFormat: 0.1.0
+    globalServerURLs: 2.82.4
+    responseFormat: 0.2.1
 generatedFiles:
   - src/sdk/sdk.ts
   - .eslintrc.js
@@ -28,7 +28,6 @@ generatedFiles:
   - src/lib/base64.ts
   - src/lib/config.ts
   - src/lib/encodings.ts
-  - src/lib/event-streams.ts
   - src/lib/http.ts
   - src/lib/retries.ts
   - src/lib/schemas.ts
@@ -39,7 +38,6 @@ generatedFiles:
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/types/blobs.ts
-  - src/types/decimal.ts
   - src/types/index.ts
   - src/types/operations.ts
   - src/types/rfcdate.ts
