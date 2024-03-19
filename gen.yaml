@@ -1,0 +1,58 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Unkey
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  telemetryEnabled: true
+go:
+  version: 0.1.2
+  clientServerStatusCodesAsErrors: true
+  flattenGlobalSecurity: false
+  imports:
+    option: openapi
+    paths:
+      callbacks: pkg/models/callbacks
+      errors: pkg/models/sdkerrors
+      operations: pkg/models/operations
+      shared: pkg/models/shared
+      webhooks: pkg/models/webhooks
+  inputModelSuffix: input
+  maxMethodParams: 4
+  outputModelSuffix: output
+  packageName: openapi
+info:
+  version: 1.0.0
+  title: Unkey API
+typescript:
+  version: 0.1.1
+  author: Speakeasy
+  clientServerStatusCodesAsErrors: false
+  flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: sdk/models/callbacks
+      errors: sdk/models/errors
+      operations: sdk/models/operations
+      shared: sdk/models/shared
+      webhooks: sdk/models/webhooks
+  inputModelSuffix: input
+  maxMethodParams: 4
+  outputModelSuffix: output
+  packageName: '@unkey/api'
+  templateVersion: v1
+x-speakeasy-retries:
+  version: ""
+  backoff:
+    exponent: 1.5
+    initialInterval: 500
+    maxElapsedTime: 3600000
+    maxInterval: 60000
+  retryConnectionErrors: true
+  statusCodes:
+    - 5XX
+  strategy: backoff

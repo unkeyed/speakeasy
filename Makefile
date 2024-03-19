@@ -4,7 +4,10 @@ all: speakeasy
 
 
 speakeasy: check-speakeasy
-	speakeasy generate sdk --lang typescript -o . -s ./openapi.json
+	speakeasy generate sdk --lang typescript -o ./ts -s ./openapi.json
+
+	speakeasy generate sdk --lang go -o ./go -s ./openapi.json
+
 
 speakeasy-validate: check-speakeasy
 	speakeasy validate openapi -s ./openapi.json
