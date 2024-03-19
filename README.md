@@ -167,7 +167,6 @@ You can override the default server globally by passing a server index to the `s
 
 
 
-
 ### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
